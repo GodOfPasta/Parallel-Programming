@@ -1,0 +1,29 @@
+~~~~~~~~~~~~~~~~СОЗДАНИЕ МНОГИХ ПОТОКОВ ИСПОЛНЕНИЯ~~~~~~~~~~~~~~~~~
+
+ Пример создания трех дочерних потоков (см. Example7.1)
+ Результат работы программы:
+	New thread: Thread[One,5,main]
+	New thread: Thread[Two,5,main]
+	New thread: Thread[Three,5,main]
+	Three: 5
+	Two: 5
+	One: 5
+	One: 4
+	Three: 4
+	Two: 4
+	Three: 3
+	Two: 3
+	One: 3
+	One: 2
+	Two: 2
+	Three: 2
+	Three: 1
+	Two: 1
+	One: 1
+	Two is finished
+	One is finished
+	Three is finished
+	Main thread is finished
+
+ Здесь после запуска все дочерние потоки совместно используют 
+общие ресурсы ЦП

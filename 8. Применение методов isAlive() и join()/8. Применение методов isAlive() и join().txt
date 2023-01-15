@@ -1,0 +1,46 @@
+~~~~~~~~~~~~~~~ПРИМЕНЕНИЕ МЕТОДОВ isAlive() И join()~~~~~~~~~~~~~~
+
+ Определить, был ли поток исполнения завершен можно двумя 
+ способами:
+  1. Вызвать для этого поотка метод isAlive()
+	final boolean isAlive()
+     Метод возвращает true, если поток исполняется, иначе false
+  2. Использовать метод join()
+	final void join() throws InetrruptedException 
+     Вызывающий поток ожидает, когда указанный поток 
+     /присоединится/ к нему
+
+(См. Example8.1)
+ Результат работы программы:
+ 	New threadThread[One,5,main]
+	New threadThread[Two,5,main]
+	New threadThread[Three,5,main]
+	Thread One is started: true
+	Thread Two is started: true
+	Thread Three is started: true
+	Waiting for threads finish
+	Two: 5
+	One: 5
+	Three: 5
+	One: 4
+	Three: 4
+	Two: 4
+	Two: 3
+	Three: 3
+	One: 3
+	One: 2
+	Three: 2
+	Two: 2
+	Three: 1
+	One: 1
+	Two: 1
+	Two is finished
+	One is finished
+	Three is finished
+	Thread One is started: false
+	Thread Two is started: false
+	Thread Three is started: false
+	Main thread is finished
+ 
+ Как видно, потоки прекращают исполнение после того, как
+ управление возвращается из вызовов join()
